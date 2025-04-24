@@ -326,73 +326,76 @@
 
 
 //######################################### ejemplo clase ################################
-//class Actuador{
-//protected:
-//    std::string Id;
-//    uint32_t valor;
-//    
-//    
-//    Actuador(std::string set_Id,uint32_t set_valor):Id(set_Id),valor(set_valor){
-//        
-//    }
-//   virtual ~Actuador() = default; //al no tener una rutina extra que se destrulla por default
-//    
-//    std::string get_Id(void)const;
-//    void set_params(std::string const &set_Id, uint32_t const set_valor);
-//    
-// 
-//};
-//
-//std::string Actuador::get_Id(void)const{
-//    return Id;
-//}
-//
-//void Actuador::set_params(std::string const &set_Id, uint32_t const set_valor){
-//    this->Id = set_Id;
-//    this->valor = set_valor;
-//}
-//
-//
-//
-//class Motor : private Actuador{
-//public:
-//    uint32_t rpm;
-//    
-//    Motor(std::string set_id,uint32_t set_valor,uint32_t set_rpm):Actuador(set_id,set_valor),rpm(set_rpm){
-//        
-//    }
-//    
-//    ~Motor() = default;
-//    
-//    
-//    void set_values(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm){
-//        Actuador::set_params(new_name, new_valor);
-//        this->rpm = new_rpm;
-//    }
-//    
-//    void get_data(void){
-//        std::cout<<"ID: "<<Id<<std::endl;
-//        std::cout<<"valor: "<<valor<<std::endl;
-//        std::cout<<"rpm: "<<rpm<<std::endl;
-//
-//    }
-//    
-//};
-//
-//
-//int main(void)
-//{
-//
-//    Motor * my_moto = new Motor("sebas", 32, 1000);
-//    
-//    my_moto->get_data();
-//    my_moto->set_values("emily",443,2000);
-//    my_moto->get_data();
-//      
-//delete my_moto;  
-//  
-//	return 0;
-//}
+class Actuador{
+    protected:
+        std::string Id;
+        uint32_t valor;
+        
+        
+        Actuador(std::string set_Id,uint32_t set_valor):Id(set_Id),valor(set_valor){
+            
+        }
+        virtual ~Actuador() = default; //al no tener una rutina extra que se destrulla por default
+        
+        std::string get_Id(void)const;
+        void set_params(std::string const &set_Id, uint32_t const set_valor); //este lleva virtual?
+        
+
+};
+
+std::string Actuador::get_Id(void)const{
+   return Id;
+}
+
+void Actuador::set_params(std::string const &set_Id, uint32_t const set_valor){
+   this->Id = set_Id;
+   this->valor = set_valor;
+}
+
+
+
+class Motor : private Actuador{
+    protected:
+        uint32_t rpm;
+    public:
+        Motor(std::string set_id,uint32_t set_valor,uint32_t set_rpm):Actuador(set_id,set_valor),rpm(set_rpm){
+            
+        }
+        
+        ~Motor() = default;
+        
+        void set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm); //para ser override
+        //se tiene que tener el mismo nombre, mismo orden numero, tipo y orden de datos si no no se utiliza
+        
+        void get_data(void);
+   
+};
+
+void Motor::set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm){
+    Actuador::set_params(new_name, new_valor);
+    this->rpm = new_rpm;
+}
+
+void Motor::get_data(void){
+    std::cout<<"ID: "<<this->Id<<std::endl;
+    std::cout<<"valor: "<<this->valor<<std::endl;
+    std::cout<<"rpm: "<<this->rpm<<std::endl;
+}
+
+
+int main(void)
+{
+
+   Motor * my_moto = new Motor("sebas", 32, 1000);
+   
+   my_moto->get_data();
+   my_moto->set_params("emily",443,2000);
+   my_moto->get_data();
+     
+    delete my_moto;  
+ 
+	return 0;
+}
 
 
 
@@ -423,27 +426,27 @@
 
 
 //################################  intercambiar dos variables por referencia #######################3
-void cambio_de_valor(uint32_t &x,uint32_t &y){
-   uint32_t aux =0;
-//    aux = x;
-//    x = y;
-//    y = aux;
-   x = x^y;
-   y = x^y;
-   x = x^y;
+// void cambio_de_valor(uint32_t &x,uint32_t &y){
+//    uint32_t aux =0;
+// //    aux = x;
+// //    x = y;
+// //    y = aux;
+//    x = x^y;
+//    y = x^y;
+//    x = x^y;
 
-}
+// }
 
-int main(void)
-{
-uint32_t d1=99,d2 = 34;
+// int main(void)
+// {
+//     uint32_t d1=99,d2 = 34;
    
-   std::cout<<"d1: "<<d1<<std::endl;
-   std::cout<<"d2: "<<d2<<std::endl;
+//    std::cout<<"d1: "<<d1<<std::endl;
+//    std::cout<<"d2: "<<d2<<std::endl;
 
-cambio_de_valor(d1,d2);  
+//     cambio_de_valor(d1,d2);  
 
-   std::cout<<"d1: "<<d1<<std::endl;
-   std::cout<<"d2: "<<d2<<std::endl;  
-	return 0;
-}
+//    std::cout<<"d1: "<<d1<<std::endl;
+//    std::cout<<"d2: "<<d2<<std::endl;  
+// 	return 0;
+// }

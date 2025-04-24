@@ -17,31 +17,31 @@ typedef enum{
 class I2C{
     
     protected: //un driver debera tener protect y que sus herencias solo puedan ser aceddidas por medio de metodos
-    gpios_t SCL_pin;
-    gpios_t SDA_pin;
-    uint32_t baudrate;
-    std::string name;
-    //public: 
-   
-    //constructores, el primero es el default cuando no se le pasen argumentos
-    I2C():SCL_pin(pin_2),SDA_pin(pin_3),baudrate(100000),name("default"){
-        
-    } 
-
-    //constructor cuando se le pasen argumentos
-    I2C(gpios_t set_scl_pin,gpios_t set_sda_pin, uint32_t set_baudrate,std::string set_name):
-    SCL_pin(set_scl_pin),SDA_pin(set_sda_pin), baudrate(set_baudrate),name(set_name){
-        
-    }
-     
+        gpios_t SCL_pin;
+        gpios_t SDA_pin;
+        uint32_t baudrate;
+        std::string name;
+        //public: 
     
-    //destructor
-    virtual ~I2C() = default;
+        //constructores, el primero es el default cuando no se le pasen argumentos
+        I2C():SCL_pin(pin_2),SDA_pin(pin_3),baudrate(100000),name("default"){
+            
+        } 
 
-    virtual void configure_params(gpios_t set_scl_pin,gpios_t set_sda_pin, uint32_t set_baudrate,std::string set_name);
-    void get_params(void);
-    uint32_t write(uint8_t addres, const uint8_t *data, uint32_t data_size);
-    uint32_t read(uint8_t addres, uint8_t *data,  uint32_t data_get);
+        //constructor cuando se le pasen argumentos
+        I2C(gpios_t set_scl_pin,gpios_t set_sda_pin, uint32_t set_baudrate,std::string set_name):
+        SCL_pin(set_scl_pin),SDA_pin(set_sda_pin), baudrate(set_baudrate),name(set_name){
+            
+        }
+        
+        
+        //destructor
+        virtual ~I2C() = default;
+
+        virtual void configure_params(gpios_t set_scl_pin,gpios_t set_sda_pin, uint32_t set_baudrate,std::string set_name);
+        void get_params(void);
+        uint32_t write(uint8_t addres, const uint8_t *data, uint32_t data_size);
+        uint32_t read(uint8_t addres, uint8_t *data,  uint32_t data_get);
     
 };
 
@@ -172,14 +172,14 @@ void SHT20::get_params(void){
 
 int main(void)
 {
-    uint8_t data[4] = {0x12,0x45,0x32,0x55};
-    uint8_t data_get[4] = {0};
+    // uint8_t data[4] = {0x12,0x45,0x32,0x55};
+    // uint8_t data_get[4] = {0};
   
     SHT20 *sensor = new SHT20(pin_4,pin_6,200,"slot");
     
     uint32_t value {0};
 
-    //sensor->read_humidity(value);
+    sensor->read_humidity(value);
     sensor->get_params();
 
     std::cout <<std::dec<<value<<std::endl;
