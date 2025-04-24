@@ -9,6 +9,7 @@
 #include <memory>
 
 
+//#################################### sobrecarga (overloading) y sobreescritura (override) ###################################333
 
 
 // int main(void){
@@ -350,6 +351,7 @@ std::string Actuador::get_Id(void)const{
 void Actuador::set_params(std::string const &set_Id, uint32_t const set_valor){
    this->Id = set_Id;
    this->valor = set_valor;
+   std::cout<<"si"<<std::endl;
 }
 
 
@@ -358,6 +360,8 @@ class Motor : private Actuador{
     protected:
         uint32_t rpm;
     public:
+        using Actuador::set_params; //al tener set params en la clase padre pero con distintos parametros es un overload no un override
+
         Motor(std::string set_id,uint32_t set_valor,uint32_t set_rpm):Actuador(set_id,set_valor),rpm(set_rpm){
             
         }
@@ -374,6 +378,7 @@ class Motor : private Actuador{
 void Motor::set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm){
     Actuador::set_params(new_name, new_valor);
     this->rpm = new_rpm;
+    std::cout<<"No"<<std::endl;
 }
 
 void Motor::get_data(void){
