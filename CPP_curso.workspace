@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="CPP_curso" Database="" Version="10000">
+  <Project Name="001_inicio" Path="001_inicio/001_inicio.project" Active="No"/>
+  <Project Name="002_Ingresar_Dato" Path="002_Ingresar_Dato/002_Ingresar_Dato.project" Active="No"/>
+  <Project Name="003_variables" Path="003_variables/003_variables.project" Active="No"/>
+  <Project Name="004_arrays" Path="arrays/arrays.project" Active="No"/>
+  <Project Name="005_primer_OPP" Path="005_primer_OPP/005_primer_OPP.project" Active="No"/>
+  <Project Name="006_vectores" Path="006_vectores/006_vectores.project" Active="No"/>
+  <Project Name="007_overload_function" Path="007_overload_function/007_overload_function.project" Active="No"/>
+  <Project Name="008_pointers" Path="008_pointers/008_pointers.project" Active="No"/>
+  <Project Name="009_OPP_v2" Path="009_OPP_v2/009_OPP_v2.project" Active="No"/>
+  <Project Name="010_paso_por_valor" Path="010_funciones_arreglos/010_funciones_arreglos.project" Active="No"/>
+  <Project Name="011_paso_por_referencia" Path="011_paso_por_referencia/011_paso_por_referencia.project" Active="No"/>
+  <Project Name="012_OPP_GAME" Path="012_OPP_GAME/012_OPP_GAME.project" Active="No"/>
+  <Project Name="YU_GI_OH" Path="YU_GI_OH/YU_GI_OH.project" Active="No"/>
+  <Project Name="013_Fechas_opp" Path="013_Fechas_opp/013_Fechas_opp.project" Active="No"/>
+  <Project Name="014_Polimorfismo_POO" Path="014_Polimorfismo_POO/014_Polimorfismo_POO.project" Active="No"/>
+  <Project Name="015_Pilas_CPP" Path="015_Pilas_CPP/015_Pilas_CPP.project" Active="No"/>
+  <Project Name="016_POO_Version3" Path="POO_Version3/POO_Version3.project" Active="No"/>
+  <Project Name="017_estudio_plex" Path="017_vectores2/017_vectores2.project" Active="No"/>
+  <Project Name="018_test" Path="018_test/018_test.project" Active="No"/>
+  <Project Name="CPP_curso" Path="CPP_curso/CPP_curso.project" Active="No"/>
+  <Project Name="Test" Path="Test/Test.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug">
+      <Environment/>
+      <Project Name="001_inicio" ConfigName="Debug"/>
+      <Project Name="002_Ingresar_Dato" ConfigName="Debug"/>
+      <Project Name="003_variables" ConfigName="Debug"/>
+      <Project Name="004_arrays" ConfigName="Debug"/>
+      <Project Name="005_primer_OPP" ConfigName="Debug"/>
+      <Project Name="006_vectores" ConfigName="Debug"/>
+      <Project Name="007_overload_function" ConfigName="Debug"/>
+      <Project Name="008_pointers" ConfigName="Debug"/>
+      <Project Name="009_OPP_v2" ConfigName="Debug"/>
+      <Project Name="010_paso_por_valor" ConfigName="Debug"/>
+      <Project Name="011_paso_por_referencia" ConfigName="Debug"/>
+      <Project Name="012_OPP_GAME" ConfigName="Debug"/>
+      <Project Name="YU_GI_OH" ConfigName="Debug"/>
+      <Project Name="013_Fechas_opp" ConfigName="Debug"/>
+      <Project Name="014_Polimorfismo_POO" ConfigName="Debug"/>
+      <Project Name="015_Pilas_CPP" ConfigName="Debug"/>
+      <Project Name="016_POO_Version3" ConfigName="Debug"/>
+      <Project Name="017_estudio_plex" ConfigName="Debug"/>
+      <Project Name="018_test" ConfigName="Debug"/>
+      <Project Name="CPP_curso" ConfigName="Debug"/>
+      <Project Name="Test" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release">
+      <Environment/>
+      <Project Name="001_inicio" ConfigName="Release"/>
+      <Project Name="002_Ingresar_Dato" ConfigName="Release"/>
+      <Project Name="003_variables" ConfigName="Release"/>
+      <Project Name="004_arrays" ConfigName="Release"/>
+      <Project Name="005_primer_OPP" ConfigName="Release"/>
+      <Project Name="006_vectores" ConfigName="Release"/>
+      <Project Name="007_overload_function" ConfigName="Release"/>
+      <Project Name="008_pointers" ConfigName="Release"/>
+      <Project Name="009_OPP_v2" ConfigName="Release"/>
+      <Project Name="010_paso_por_valor" ConfigName="Release"/>
+      <Project Name="011_paso_por_referencia" ConfigName="Release"/>
+      <Project Name="012_OPP_GAME" ConfigName="Release"/>
+      <Project Name="YU_GI_OH" ConfigName="Release"/>
+      <Project Name="013_Fechas_opp" ConfigName="Release"/>
+      <Project Name="014_Polimorfismo_POO" ConfigName="Release"/>
+      <Project Name="015_Pilas_CPP" ConfigName="Release"/>
+      <Project Name="016_POO_Version3" ConfigName="Release"/>
+      <Project Name="017_estudio_plex" ConfigName="Release"/>
+      <Project Name="018_test" ConfigName="Release"/>
+      <Project Name="CPP_curso" ConfigName="Release"/>
+      <Project Name="Test" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
