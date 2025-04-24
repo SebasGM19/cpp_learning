@@ -11,13 +11,13 @@
 
 
 
-int main(void){
+// int main(void){
     
-    uint32_t volatile * data = (uint32_t volatile*)(0x40000);
+//     uint32_t volatile * data = (uint32_t volatile*)(0x40000);
     
-    uintptr_t data = (0x42);
-    return 0;
-}
+//     uintptr_t data = (0x42);
+//     return 0;
+// }
 
 
 //#################################### smart pointers ###################################333
@@ -83,7 +83,6 @@ int main(void){
 
 
 //################################# try catch throw manejo de excepciones ##############################
-
 //void testRango(int index) {
 //    if (index > 10) {
 //        throw std::out_of_range("out of range");
@@ -116,7 +115,7 @@ int main(void){
 //}
 
 
-/// ########################################### map (diccionario) ##################################
+//########################################### map (diccionario) ##################################
 //int main(void)
 //{
 //
@@ -218,7 +217,6 @@ int main(void){
 //}
 
 //############################################# vectores ########################################
-
 //void Mysort(std::vector<uint32_t> & new_vect){
 //    
 //    uint32_t aux=0;
@@ -293,7 +291,6 @@ int main(void){
 
 
 // #################################### Uso de * y & como y cuando usarlos ##########################
-
 //void cadena(uint8_t* var){ //para cadenas de caracteres de numeros y demas es *
 //    
 //    for(uint8_t i =0; i<10; i++){
@@ -400,7 +397,6 @@ int main(void){
 
 
 //##############################  factrorial de un numero ########################################3
-
 //uint32_t dataaa(int a){
 //    uint32_t resul =1;
 //    
@@ -427,28 +423,27 @@ int main(void){
 
 
 //################################  intercambiar dos variables por referencia #######################3
+void cambio_de_valor(uint32_t &x,uint32_t &y){
+   uint32_t aux =0;
+//    aux = x;
+//    x = y;
+//    y = aux;
+   x = x^y;
+   y = x^y;
+   x = x^y;
 
-//void cambio_de_valor(uint32_t &x,uint32_t &y){
-//    uint32_t aux =0;
-////    aux = x;
-////    x = y;
-////    y = aux;
-//    x = x^y;
-//    y = x^y;
-//    x = x^y;
-//
-//}
-//
-//int main(void)
-//{
-//uint32_t d1=99,d2 = 34;
-//    
-//    std::cout<<"d1: "<<d1<<std::endl;
-//    std::cout<<"d2: "<<d2<<std::endl;
-//
-//cambio_de_valor(d1,d2);  
-//
-//    std::cout<<"d1: "<<d1<<std::endl;
-//    std::cout<<"d2: "<<d2<<std::endl;  
-//	return 0;
-//}
+}
+
+int main(void)
+{
+uint32_t d1=99,d2 = 34;
+   
+   std::cout<<"d1: "<<d1<<std::endl;
+   std::cout<<"d2: "<<d2<<std::endl;
+
+cambio_de_valor(d1,d2);  
+
+   std::cout<<"d1: "<<d1<<std::endl;
+   std::cout<<"d2: "<<d2<<std::endl;  
+	return 0;
+}
