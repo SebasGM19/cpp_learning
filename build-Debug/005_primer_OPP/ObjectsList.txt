@@ -1,1 +1,0 @@
-../build-Debug/005_primer_OPP/main.cpp.o   

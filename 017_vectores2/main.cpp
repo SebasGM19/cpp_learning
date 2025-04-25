@@ -9,9 +9,135 @@
 #include <memory>
 
 
-//#################################### sobrecarga (overloading) y sobreescritura (override) ###################################333
+//#################################### sobrecarga (overloading) y sobreescritura (override) ###################################
+// class Animal{
+//     protected: //esto hace que sea una clase abtracta que no pueda ser llamada para crear objetos
+//         std::string nombre;
+//         std::string color;
+
+//         Animal(std::string set_nombre,std::string set_color):nombre(set_nombre),color(set_color){}
+//         virtual ~Animal() = default;
+
+//         virtual void hablar(void){ //este si lleva virtual poir que tiene la misma firma que en las clases hijas
+//             std::cout<<"animal"<<std::endl;
+//         }
+
+//         virtual void metodo_obligado(void) =0; //al tener solo el prototipo aqui igualado a 0 indica que se debe si o si en las clases hijas definir este metodo
+
+//         void brincar(uint32_t veces){ //esto no lleva virtual por que lo que hace es sobrecarga de metodos
+//             std::cout<<"brinco "<<veces<<std::endl;
+//         }
+
+//         void info(void){
+//             std::cout<<"Nombre: "<<this->nombre<<std::endl;
+//             std::cout<<"color: "<<this->color<<std::endl;
+//         }
+        
+// };
 
 
+// class Perro final : private Animal{
+//     private:
+//         std::string raza;
+        
+//     public:
+
+//     using Animal::brincar;
+
+//     Perro(std::string set_nombre, std::string set_color, std::string set_raza):Animal(set_nombre,set_color),raza(set_raza){ }
+//     ~Perro()override = default;
+
+//     void hablar(void)override{ //esto si lleva override por que si tiene la misma firma que el original
+//         std::cout<<"Perro"<<std::endl;
+//     }
+    
+//     void metodo_obligado(void) override{
+
+//     }
+
+//     uint8_t brincar(int8_t piso ){ //no lleva override por que tiene distinta firma, esta haciendo sobrecarga de metodos
+
+//         std::cout<<"llegue al piso: "<<piso<<std::endl;
+//         return -1;
+//     }
+
+//     void info(void){
+//         Animal::info();
+//         std::cout<<"Raza: "<<this->raza<<std::endl;
+
+//     }
+
+
+// };
+
+// class Gato : private Animal{
+
+//     private:    
+//         int vidas;
+
+//     public:
+//         using Animal::brincar;
+//         Gato(std::string set_nombre, std::string set_color, int set_vidas):Animal(set_nombre,set_color),vidas(set_vidas){   }
+//         ~Gato() override = default;
+
+//         void hablar(void)override{
+//             std::cout<<"Gato"<<std::endl;
+//         }
+
+//         void brincar(std::string nivel){
+//             std::cout<<"voy al nivel: "<<nivel<<std::endl;
+//         }
+//         void metodo_obligado(void) override{
+            
+//         }
+//         void info(void){
+//             Animal::info();
+//             std::cout<<"vidas: "<<this->vidas<<std::endl;
+//         }
+
+// };
+
+// class Manchas: private Gato{
+
+//     public:
+//         Manchas(std::string set_nombre, std::string set_color, int set_vidas):Gato(set_nombre,set_color,set_vidas){   }
+//         ~Manchas() override = default;
+        
+//         void hablar(void)override{
+//             std::cout<<"manchas"<<std::endl;
+//         }
+//         void metodo_obligado(void) override{
+        
+//         }
+
+// };
+
+
+// int main(void){
+
+//     Perro* p1 = new Perro("fido","negro","mexico");
+//     p1->hablar();//dira el hablar del perro
+
+//     Manchas* m1 = new Manchas("chis","blanco",4);
+//     m1->hablar();//dira manchas al hablar
+    
+//     // Animal* a1 = p1;
+//     // a1->hablar(); //dira el hbalar del perro
+    
+//     // Gato* g1 = new Gato("chis","blanco",4);
+//     // a1 = g1;
+
+//     // a1->hablar();//dira el hablar de gato
+
+
+//     delete p1,m1;
+
+//     return 0;
+// }
+
+
+
+//#################################### puntero a memoria ###################################
 // int main(void){
     
 //     uint32_t volatile * data = (uint32_t volatile*)(0x40000);
@@ -327,80 +453,81 @@
 
 
 //######################################### ejemplo clase ################################
-class Actuador{
-    protected:
-        std::string Id;
-        uint32_t valor;
+// class Actuador{
+
+//     protected:
+//         std::string Id;
+//         uint32_t valor;
         
         
-        Actuador(std::string set_Id,uint32_t set_valor):Id(set_Id),valor(set_valor){
+//         Actuador(std::string set_Id,uint32_t set_valor):Id(set_Id),valor(set_valor){
             
-        }
-        virtual ~Actuador() = default; //al no tener una rutina extra que se destrulla por default
+//         }
+//         virtual ~Actuador() = default; //al no tener una rutina extra que se destrulla por default
         
-        std::string get_Id(void)const;
-        void set_params(std::string const &set_Id, uint32_t const set_valor); //este lleva virtual?
+//         std::string get_Id(void)const;
+//         void set_params(std::string const &set_Id, uint32_t const set_valor); //este lleva virtual?
         
 
-};
+// };
 
-std::string Actuador::get_Id(void)const{
-   return Id;
-}
+// std::string Actuador::get_Id(void)const{
+//    return Id;
+// }
 
-void Actuador::set_params(std::string const &set_Id, uint32_t const set_valor){
-   this->Id = set_Id;
-   this->valor = set_valor;
-   std::cout<<"si"<<std::endl;
-}
+// void Actuador::set_params(std::string const &set_Id, uint32_t const set_valor){
+//    this->Id = set_Id;
+//    this->valor = set_valor;
+//    std::cout<<"si"<<std::endl;
+// }
 
 
 
-class Motor : private Actuador{
-    protected:
-        uint32_t rpm;
-    public:
-        using Actuador::set_params; //al tener set params en la clase padre pero con distintos parametros es un overload no un override
+// class Motor : private Actuador{
+//     protected:
+//         uint32_t rpm;
+//     public:
+//         using Actuador::set_params; //al tener set params en la clase padre pero con distintos parametros es un overload no un override
 
-        Motor(std::string set_id,uint32_t set_valor,uint32_t set_rpm):Actuador(set_id,set_valor),rpm(set_rpm){
+//         Motor(std::string set_id,uint32_t set_valor,uint32_t set_rpm):Actuador(set_id,set_valor),rpm(set_rpm){
             
-        }
+//         }
         
-        ~Motor() = default;
+//         ~Motor()override = default;
         
-        void set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm); //para ser override
-        //se tiene que tener el mismo nombre, mismo orden numero, tipo y orden de datos si no no se utiliza
+//         void set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm); //para ser override
+//         //se tiene que tener el mismo nombre, mismo orden numero, tipo y orden de datos si no no se utiliza
         
-        void get_data(void);
+//         void get_data(void);
    
-};
+// };
 
-void Motor::set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm){
-    Actuador::set_params(new_name, new_valor);
-    this->rpm = new_rpm;
-    std::cout<<"No"<<std::endl;
-}
+// void Motor::set_params(std::string const &new_name, uint32_t new_valor, uint32_t new_rpm){
+//     Actuador::set_params(new_name, new_valor);
+//     this->rpm = new_rpm;
+//     std::cout<<"No"<<std::endl;
+// }
 
-void Motor::get_data(void){
-    std::cout<<"ID: "<<this->Id<<std::endl;
-    std::cout<<"valor: "<<this->valor<<std::endl;
-    std::cout<<"rpm: "<<this->rpm<<std::endl;
-}
+// void Motor::get_data(void){
+//     std::cout<<"ID: "<<this->Id<<std::endl;
+//     std::cout<<"valor: "<<this->valor<<std::endl;
+//     std::cout<<"rpm: "<<this->rpm<<std::endl;
+// }
 
 
-int main(void)
-{
+// int main(void)
+// {
 
-   Motor * my_moto = new Motor("sebas", 32, 1000);
+//    Motor * my_moto = new Motor("sebas", 32, 1000);
    
-   my_moto->get_data();
-   my_moto->set_params("emily",443,2000);
-   my_moto->get_data();
+//    my_moto->get_data();
+//    my_moto->set_params("emily",443,2000);
+//    my_moto->get_data();
      
-    delete my_moto;  
+//     delete my_moto;  
  
-	return 0;
-}
+// 	return 0;
+// }
 
 
 

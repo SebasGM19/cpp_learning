@@ -1,1 +1,0 @@
-../build-Debug/017_vectores2/main.cpp.o   

@@ -1,1 +1,0 @@
-../build-Debug/002_Ingresar_Dato/example_header.cpp.o ../build-Debug/002_Ingresar_Dato/main.cpp.o   
