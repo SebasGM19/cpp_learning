@@ -1,1 +1,0 @@
-../build-Debug/014_Polimorfismo_POO/main.cpp.o   

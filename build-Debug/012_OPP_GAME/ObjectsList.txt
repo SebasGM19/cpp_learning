@@ -1,1 +1,0 @@
-../build-Debug/012_OPP_GAME/Personaje.cpp.o ../build-Debug/012_OPP_GAME/main.cpp.o   
